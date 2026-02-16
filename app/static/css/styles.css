@@ -1,0 +1,211 @@
+/* Glassmorphism */
+.glass-card {
+    background: rgba(16, 23, 42, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.glass-card:hover {
+    background: rgba(16, 23, 42, 0.8);
+    border-color: rgba(0, 242, 255, 0.2);
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0f1c;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #00f2ff;
+}
+
+/* Text Glow */
+.text-glow {
+    text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+}
+
+/* Input Styles */
+.cyber-input {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.cyber-input:focus {
+    border-color: #00f2ff;
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+    outline: none;
+}
+
+/* Loader */
+.cyber-loader {
+    width: 48px;
+    height: 48px;
+    border: 3px solid #FFF;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+.cyber-loader::after {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid;
+    border-color: #00f2ff transparent;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Glitch Effect */
+.glitch-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.glitch {
+    position: relative;
+    color: white;
+    /* Fallback */
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch::before {
+    left: 2px;
+    text-shadow: -1px 0 #00f2ff;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim-1 5s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+    left: -2px;
+    text-shadow: -1px 0 #0aff00;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim-2 5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim-1 {
+    0% {
+        clip: rect(20px, 9999px, 81px, 0);
+    }
+
+    20% {
+        clip: rect(6px, 9999px, 83px, 0);
+    }
+
+    40% {
+        clip: rect(80px, 9999px, 63px, 0);
+    }
+
+    60% {
+        clip: rect(13px, 9999px, 96px, 0);
+    }
+
+    80% {
+        clip: rect(69px, 9999px, 14px, 0);
+    }
+
+    100% {
+        clip: rect(32px, 9999px, 50px, 0);
+    }
+}
+
+@keyframes glitch-anim-2 {
+    0% {
+        clip: rect(57px, 9999px, 20px, 0);
+    }
+
+    20% {
+        clip: rect(93px, 9999px, 53px, 0);
+    }
+
+    40% {
+        clip: rect(17px, 9999px, 3px, 0);
+    }
+
+    60% {
+        clip: rect(38px, 9999px, 66px, 0);
+    }
+
+    80% {
+        clip: rect(2px, 9999px, 87px, 0);
+    }
+
+    100% {
+        clip: rect(58px, 9999px, 93px, 0);
+    }
+}
+
+/* Terminal Cursor */
+.typing-cursor::after {
+    content: '_';
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* GIF Background Overlay */
+.gif-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    /* Behind everything but above gradient */
+    background-image: url('../images/background.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.15;
+    /* Low opacity to blend */
+    pointer-events: none;
+    mix-blend-mode: screen;
+}

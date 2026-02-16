@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="min-h-screen flex items-center justify-center text-center px-4">
+    <div data-aos="zoom-in">
+        <h1
+            class="text-9xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-cyber-blue mb-4 text-glow">
+            404</h1>
+        <h2 class="text-3xl font-bold text-white mb-6">Security Breach: Page Not Found</h2>
+        <p class="text-gray-400 max-w-lg mx-auto mb-10">
+            The resource you are looking for has been moved, deleted, or never existed.
+            Please return to the secure zone.
+        </p>
+        <a href="/"
+            class="px-8 py-4 bg-cyber-blue text-black font-bold rounded-lg hover:bg-white transition-all hover:shadow-[0_0_20px_rgba(0,242,255,0.4)]">
+            Return to Safety
+        </a>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,16 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="chartGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#0aff00;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#0aff00;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+  <polyline points="20,180 60,140 100,160 140,80 180,40" 
+            fill="none" stroke="#0aff00" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+  <polygon points="20,180 60,140 100,160 140,80 180,40 180,180 20,180" 
+           fill="url(#chartGrad)" />
+  <circle cx="60" cy="140" r="6" fill="#fff" />
+  <circle cx="100" cy="160" r="6" fill="#fff" />
+  <circle cx="140" cy="80" r="6" fill="#fff" />
+  <circle cx="180" cy="40" r="6" fill="#fff" />
+</svg>

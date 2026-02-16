@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}SecureWebCheck{% endblock %}</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: {
+                            dark: '#0a0f1c',
+                            blue: '#00f2ff',
+                            green: '#0aff00',
+                            card: 'rgba(16, 23, 42, 0.7)'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                    animation: {
+                        'gradient': 'gradient 15s ease infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        gradient: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/static/css/styles.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-cyber-dark text-white overflow-x-hidden font-sans relative">
+
+    <!-- Animated Background -->
+    <div
+        class="fixed inset-0 z-[-1] bg-gradient-to-br from-cyber-dark via-[#0f172a] to-[#1e1b4b] animate-gradient bg-[length:400%_400%]">
+    </div>
+    <!-- Particles Background -->
+    <div id="particles-js" class="fixed inset-0 z-[-1]"></div>
+
+    <!-- GIF Background Layer -->
+    <div class="gif-background"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 backdrop-blur-md border-b border-white/10" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="/" class="flex items-center gap-2 group">
+                        <div
+                            class="w-8 h-8 rounded bg-gradient-to-tr from-cyber-blue to-cyber-green flex items-center justify-center">
+                            <svg class="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                                </path>
+                            </svg>
+                        </div>
+                        <span
+                            class="font-bold text-xl tracking-tight group-hover:text-cyber-blue transition-colors">SecureWebCheck</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="/"
+                            class="hover:text-cyber-blue transition-colors px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="/learn"
+                            class="hover:text-cyber-blue transition-colors px-3 py-2 rounded-md text-sm font-medium">Learn</a>
+                        <a href="#features"
+                            class="hover:text-cyber-blue transition-colors px-3 py-2 rounded-md text-sm font-medium">Features</a>
+                        <a href="/#test-section"
+                            class="bg-cyber-blue/10 hover:bg-cyber-blue/20 text-cyber-blue border border-cyber-blue/50 px-4 py-2 rounded-full text-sm font-medium transition-all hover:shadow-[0_0_15px_rgba(0,242,255,0.3)]">Start
+                            Testing</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-16 min-h-screen">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black/30 backdrop-blur-md border-t border-white/5 py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <span
+                        class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyber-blue to-cyber-green">SecureWebCheck</span>
+                    <p class="text-sm text-gray-400 mt-2">Professional Website Security Analysis</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-cyber-blue transition-colors">Github</a>
+                    <a href="#" class="text-gray-400 hover:text-cyber-blue transition-colors">Privacy</a>
+                    <a href="#" class="text-gray-400 hover:text-cyber-blue transition-colors">Terms</a>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-xs text-gray-600">
+                &copy; 2026 SecureWebCheck. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script src="/static/js/main.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100,
+            easing: 'ease-out-cubic'
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+fastapi
+uvicorn[standard]
+jinja2
+requests
+beautifulsoup4
+python-multipart
+aiofiles
+
+
+# to run the file---
+# cd "V:\Coding Practice and Learning\Project\s1"
+# uvicorn app.main:app --reload
