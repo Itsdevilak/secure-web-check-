@@ -1,23 +1,12 @@
-# 🔐 Secure Web Check
+fastapi
+uvicorn[standard]
+jinja2
+requests
+beautifulsoup4
+python-multipart
+aiofiles
 
-AI-powered web security testing tool built using FastAPI to detect basic vulnerabilities in web applications.
 
-## 🚀 Features
-- URL-based security scanning
-- Basic vulnerability detection (XSS, SQLi)
-- FastAPI backend
-- JSON API responses
-
-## 🛠️ Tech Stack
-- Python
-- FastAPI
-- Uvicorn
-- Requests
-
-## ▶️ How to Run
-
-```bash
-git clone https://github.com/Itsdevilak/secure-web-check.git
-cd secure-web-check
-pip install -r requirements.txt
-uvicorn app.main:app --reload
+# to run the file---
+# cd "V:\Coding Practice and Learning\Project\s1"
+# uvicorn app.main:app --reload
