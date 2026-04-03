@@ -12,7 +12,7 @@ templates = Jinja2Templates(directory="app/templates")
 
 @app.exception_handler(404)
 async def custom_404_handler(request: Request, exc):
-    return templates.TemplateResponse("404.html", {"request": request}, status_code=404)
+    return templates.TemplateResponse(request=request, name="404.html", status_code=404)
 
 app.include_router(pages.router)
 app.include_router(check.router, prefix="/api")
